@@ -1,0 +1,5 @@
+#查看可安装版本
+    sudo apt list subversion
+
+#安装软件
+    sudo apt install subversion
