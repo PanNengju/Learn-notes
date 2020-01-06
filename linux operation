@@ -1,0 +1,21 @@
+//=========================================
+svn:
+#查看可安装版本
+    sudo apt list subversion
+
+#安装软件
+    sudo apt install subversion
+
+//=========================================
+scp:
+从服务器复制文件到本地：
+    scp root@192.168.1.100:/data/test.txt /home/myfile/
+    
+从服务器复制文件夹到本地：
+    scp -r root@192.168.1.100:/data/ /home/myfile/
+    
+从本地复制文件到服务器：
+    scp /home/myfile/test.txt root@192.168.1.100:/data/
+    
+从本地复制文件夹到服务器：
+    scp -r /home/myfile/ root@192.168.1.100:/data/
