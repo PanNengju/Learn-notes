@@ -19,3 +19,5 @@ scp:
     
 从本地复制文件夹到服务器：
     scp -r /home/myfile/ root@192.168.1.100:/data/
+    
+    
