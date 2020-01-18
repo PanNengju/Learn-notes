@@ -5,6 +5,31 @@ svn:
 
 #安装软件
     sudo apt install subversion
+    
+#创建用于存放版本库的目录
+    mkdir /home/svn
+   
+#在创建的目录下创建一个新的文件夹，文件夹的名称与将要上传至svn的项目名称一致
+    sudo svnadmin create /home/svn/repository
+    
+#进入conf目录,conf目录中authz文件是权限控制文件，passwd是帐号密码文件，svnserve.conf是SVN服务配置文件
+#修改passwd文件，加入用户，格式就是“用户名=密码”，如：admin = admin
+#修改authz文件，加入用户权限：
+    [/]     #目录
+    zhaodaxin = rw      #权限控制
+    
+#修改svnserve.conf(很重要)
+    
+    
+#停止重启SVN
+    killall svnserve //停止
+    svnserve -d -r /opt/svn/repositories // 启动
+   
+#查看SVN进程
+    ps -ef|grep svn|grep -v grep
+    
+#svn: E220001: Item is not readable
+#解决办法：在svnserve.conf 文件中, 设置 anon-access = none
 
 
 
