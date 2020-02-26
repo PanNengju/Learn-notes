@@ -32,6 +32,23 @@ svn:
 #解决办法：在svnserve.conf 文件中, 设置 anon-access = none
 
 
+#将文件checkout到本地目录
+    svn checkout path（path是服务器上的目录）
+    #例如：svn checkout svn://192.168.1.1/pro/domain
+    
+#往版本库中添加新的文件
+    svn add file
+    #例如：svn add test.php(添加test.php)
+
+#将改动的文件提交到版本库
+    svn commit -m "LogMessage" [-N] [--no-unlock] PATH(如果选择了保持锁，就使用--no-unlock开关)
+    #例如：svn commit -m "add test file for my test" test.php
+    
+#加锁/解锁
+    svn lock -m "LockMessage" [--force] PATH
+    svn unlock PATH
+    #例如：svn lock -m "lock test file" test.php
+
 
 //=========================================
 scp:
